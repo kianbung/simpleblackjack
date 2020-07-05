@@ -236,9 +236,7 @@ func _on_DealButton_pressed():
 	update_cards(DEALER)
 	check_hand(PLAYER)
 	check_hand(DEALER)
-	
 
-# TODO: DEALER AI
 func _on_StandButton_pressed():
 	while !dealer_stand and !game_ended:
 		dealer_play()
