@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Deck.gd" type="Script" id=1]
+
+[node name="Deck" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+
+[node name="DealButton" type="Button" parent="Buttons"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -47.0
+margin_right = 49.0
+margin_bottom = -27.0
+text = "Deal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitButton" type="Button" parent="Buttons"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -23.0
+margin_right = 39.0
+margin_bottom = -3.0
+text = "Hit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StandButton" type="Button" parent="Buttons"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 48.0
+margin_top = -23.0
+margin_right = 95.0
+margin_bottom = -3.0
+text = "Stand"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HandValue" type="Label" parent="Buttons"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -39.0
+margin_right = 95.0
+margin_bottom = -25.0
+text = "Hand value: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="Buttons"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DealerHand" type="Label" parent="Buttons"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerHand" type="CanvasLayer" parent="."]
+
+[node name="DealerHand" type="CanvasLayer" parent="."]
+[connection signal="pressed" from="Buttons/DealButton" to="." method="_on_DealButton_pressed"]
+[connection signal="pressed" from="Buttons/HitButton" to="." method="_on_HitButton_pressed"]
+[connection signal="pressed" from="Buttons/StandButton" to="." method="_on_StandButton_pressed"]
